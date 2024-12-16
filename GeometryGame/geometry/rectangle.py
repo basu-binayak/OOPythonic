@@ -22,3 +22,13 @@ class Rectangle:
         breadth = self.upright.y - self.lowleft.y
         area = abs(length*breadth)
         return area    
+
+if __name__ == "__main__":
+    
+    # Create a rectangle instance and calculate area 
+    lowleft = Point()
+    upright = Point(4,4)
+    rect_2 = Rectangle(lowleft, upright)
+    
+    print(f"The area of the rectangle is : {rect_2.area()}")
+    

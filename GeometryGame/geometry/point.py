@@ -50,7 +50,7 @@ class Point:
             :return: string 
         """
         # import late to avoid the circular Importerror 
-        from geometrgy.rectangle import Rectangle 
+        from geometry.rectangle import Rectangle 
         
         condition_1 = rectangle.lowleft.x<self.x<rectangle.upright.x
         condition_2 = rectangle.lowleft.y<self.y<rectangle.upright.y
@@ -65,4 +65,21 @@ class Point:
             Returns a string representation of the point object
         """
         return f"({self.x},{self.y})"
+
+if __name__ == "__main__":
+    # Create a object from the Point class
+    point_1 = Point(3,4)
+    print(f"The first point is : {point_1}")
+        
+    point_2 = Point(8,15)
+    print(f"The first point is : {point_2}")
     
+    # Let us calculate the distance between the two 
+    print(f"The distance between points {point_1} and {point_2} is: {point_1.calculate_distance(point_2)}")
+        
+    point_3 = Point(5,6)
+    # Create a Rectangle instance and use it to find if the point ininside the rectangle 
+    from geometry.rectangle import Rectangle 
+    rect_1 = Rectangle(point_1, point_2)
+    
+    print(point_3.is_inside_rectangle(rect_1))
