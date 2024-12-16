@@ -43,15 +43,17 @@ class Point:
 
         return math.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2)
     
-    def is_inside_rectangle(self, leftpoint: "Point", rightpoint: "Point") -> bool:
+    def is_inside_rectangle(self, rectangle:"Rectangle") -> bool:
         """
             Returns True if the point is inside the rectangle defined by leftpoint and rightpoint otherwise rturns False
-            :param leftpoint: Point instance 
-            :param rightpoint: Point instance 
+            :param rectangle: Rectangle instance 
             :return: string 
         """
-        condition_1 = leftpoint.x<self.x<rightpoint.x
-        condition_2 = leftpoint.y<self.y<rightpoint.y
+        # import late to avoid the circular Importerror 
+        from .rectangle import Rectangle 
+        
+        condition_1 = rectangle.lowleft.x<self.x<rectangle.upright.x
+        condition_2 = rectangle.lowleft.y<self.y<rectangle.upright.y
         
         if condition_1 and condition_2:
             return f"The point {self}, is inside the rectangle!"
@@ -63,16 +65,4 @@ class Point:
             Returns a string representation of the point object
         """
         return f"({self.x},{self.y})"
-
-if __name__ == "__main__":
-    # Create a object from the Point class
-    point_1 = Point(3,4)
-    print(f"The first point is : {point_1}")
     
-    point_2 = Point(8,15)
-    print(f"The first point is : {point_2}")
-    
-    print(f"The distance between points {point_1} and {point_2} is: {point_1.calculate_distance(point_2)}")
-    
-    point_3 = Point(5,6)
-    print(point_3.is_inside_rectangle(point_1, point_2))
