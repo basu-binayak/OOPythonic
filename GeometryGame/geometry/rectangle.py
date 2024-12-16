@@ -1,5 +1,5 @@
 import math
-from .point import Point 
+from geometry.point import Point 
 
 class Rectangle:
     """

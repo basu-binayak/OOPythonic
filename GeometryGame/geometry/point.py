@@ -50,7 +50,7 @@ class Point:
             :return: string 
         """
         # import late to avoid the circular Importerror 
-        from .rectangle import Rectangle 
+        from geometrgy.rectangle import Rectangle 
         
         condition_1 = rectangle.lowleft.x<self.x<rectangle.upright.x
         condition_2 = rectangle.lowleft.y<self.y<rectangle.upright.y
