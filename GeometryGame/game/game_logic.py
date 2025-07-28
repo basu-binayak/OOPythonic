@@ -1,5 +1,6 @@
-from geometry.rectangle import Rectangle
-from geometry.point import Point
+# from geometry.point import Point
+# from geometry.rectangle import Rectangle
+from geometry import Point, Rectangle
 import random
 
 def start_game():

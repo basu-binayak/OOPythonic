@@ -1,5 +1,5 @@
-from geometry.rectangle import Rectangle 
-from geometry.point import Point 
+from .point import Point
+from .rectangle import Rectangle
 
 class Square(Rectangle):
     """
@@ -53,12 +53,3 @@ class Square(Rectangle):
         """
         return 4*self.sidelength
     
-if __name__=="__main__":
-    # creata a square instance 
-    square_1 = Square(Point(0,0),5)
-    
-    # calculate area 
-    print(f"The are of the square is : {square_1.area()}")
-    
-    # calculate perimeter
-    print(f"The perimeter of the square is {square_1.perimeter()}")

@@ -115,3 +115,104 @@ Imagine Python as a giant LEGO world:
 This consistent design makes Python **intuitive**, **flexible**, and a great language for both beginners and advanced developers.
 
 ---
+---
+
+# 🐍 Understanding the Difference Between `__init__` and Normal Methods in Python Classes
+
+When you're learning object-oriented programming in Python, one of the first things you'll come across is the `__init__` method. You might wonder: *How is this different from other methods inside a class?*
+
+In this article, we'll break down the key differences between `__init__` and regular methods with relatable examples, analogies, and a clear summary.
+
+## 🧠 What is the `__init__` Method?
+
+The `__init__` method is a **special method** in Python classes. It’s called a **constructor** because it’s automatically invoked when you create a new object from a class.
+
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name
+```
+
+When you create a new `Dog` object:
+
+```python
+d = Dog("Buddy")
+```
+
+Python automatically calls the `__init__` method to initialize the object.
+
+## ⚙️ What Are Normal Methods?
+
+Normal methods are the functions you define inside a class to give **behavior** to the object. These methods are **not called automatically** — you must call them explicitly on the object.
+
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        print(f"{self.name} says woof!")
+```
+
+Now when you call:
+
+```python
+d = Dog("Buddy")
+d.bark()
+```
+
+You’ll get:
+
+```
+Buddy says woof!
+```
+
+## 🧪 `__init__` vs Normal Methods — Key Differences
+
+| Feature                  | `__init__` Method                        | Normal Method                            |
+| ------------------------ | ---------------------------------------- | ---------------------------------------- |
+| 🧠 Purpose               | Initializes object state during creation | Defines behavior or functionality        |
+| 🧲 Called Automatically? | ✅ Yes, when object is created            | ❌ No, must be called manually            |
+| 🛠 Used For              | Setting up initial data (attributes)     | Actions like calculating, printing, etc. |
+| 🔍 Special?              | ✅ Yes (special "dunder" method)          | ❌ No, it's a standard method             |
+| 👇 Usage Example         | `obj = MyClass(args)`                    | `obj.method_name()`                      |
+
+## 🧸 Real-Life Analogy: Building a Toy Car
+
+Think of a class like a toy car factory.
+
+* The `__init__` method is the **assembly line** — it puts wheels, paint, and batteries in place.
+* Normal methods like `drive()` or `honk()` are the **features** — they make the toy move or make sound **after it's built**.
+
+You don’t drive the car while it’s being assembled; you do that once the car is ready.
+
+## 📝 Complete Example
+
+```python
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def drive(self):
+        print(f"The {self.year} {self.brand} is now driving.")
+```
+
+### Usage:
+
+```python
+c = Car("Tesla", 2023)  # __init__ is called automatically
+c.drive()               # Normal method called explicitly
+```
+
+---
+
+## ✅ Summary
+
+To wrap it all up:
+
+* `__init__()` is a **constructor** used to **initialize** the object when it's created.
+* Normal methods are **behaviors** you define that need to be **called manually**.
+* Together, they help you build powerful and flexible Python classes.
+
+---

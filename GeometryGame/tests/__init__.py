@@ -1,0 +1,1 @@
+from .tests import test_Point, test_Rectangle, test_Square, test_Cuboid

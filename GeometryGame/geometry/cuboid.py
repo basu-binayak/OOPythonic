@@ -37,16 +37,4 @@ class Cuboid(Rectangle):
         side_area = 2 * (length * self.height + breadth * self.height)
         return 2 * base_area + side_area
 
-# Example Usage
-if __name__ == "__main__":
-    from .point import Point
 
-    # Create the bottom-left and upper-right points of the rectangle base
-    lowleft = Point(0, 0)
-    upright = Point(4, 3)
-
-    # Create a Cuboid with height = 5
-    cuboid = Cuboid(lowleft, upright, 5)
-
-    print(f"Volume of cuboid: {cuboid.volume()}")            # Output: 60
-    print(f"Surface area of cuboid: {cuboid.surface_area()}")  # Output: 94
